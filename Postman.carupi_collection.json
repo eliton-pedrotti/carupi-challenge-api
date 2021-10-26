@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "1bf2caec-1596-49d0-b1e8-d0a4438c0fe3",
+		"name": "Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateCar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"brand\": \"mercedez\",\n\t\"model\": \"hatch\",\n\t\"version\": \"5.0\",\n\t\"age\": 2018,\n\t\"mileage\": 23235,\n\t\"type_of_exchange\": \"Manual\",\n\t\"price\": 25000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3333/car",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3333",
+					"path": [
+						"car"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCarById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMzMTMyMjI3LCJleHAiOjE2MzMxMzI0MDd9.-nHSS67Cr98MsN2sgUMRy8NsPIAEBFXC9mpqyHuwAp8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/car/617782ecbfb58dee67c67e46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"car",
+						"617782ecbfb58dee67c67e46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditCar",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Eliton Marcelo Pedrotti\",\n\t\"email\": \"pedrottieliton777@gmail.com\",\n\t\"fone\": \"51995619729\",\n\t\"oldPassword\": \"aA123456789\",\n\t\"password\": \"bB123456789\",\n\t\"confirmPassword\": \"bB123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/car/edit/617782ecbfb58dee67c67e46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"car",
+						"edit",
+						"617782ecbfb58dee67c67e46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCars",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/car",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"car"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
